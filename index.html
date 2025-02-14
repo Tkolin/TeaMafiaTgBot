@@ -3,52 +3,45 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Генератор QR-кодов</title>
-    <!-- Подключаем библиотеку для генерации QR-кодов -->
-    <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+    <title>Чайная Мафия</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            padding: 20px;
+            font-family: 'Arial', sans-serif;
+            background: #f2f2f2;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
         }
 
-        #qrcode {
-            margin-top: 20px;
+        .container {
+            background: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
         }
 
-        input {
-            width: 100%;
-            padding: 10px;
-            font-size: 16px;
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        p {
+            font-size: 1.2em;
+            color: #666;
         }
     </style>
 </head>
 
 <body>
-    <!-- Поле ввода -->
-    <input type="text" id="text-input" placeholder="Введите текст для QR-кода" oninput="generateQRCode()">
-    <!-- Контейнер для QR-кода -->
-    <div id="qrcode"></div>
-
-    <script>
-        // Функция для генерации QR-кода
-        function generateQRCode() {
-            const text = document.getElementById('text-input').value;
-            const qrContainer = document.getElementById('qrcode');
-            // Очищаем контейнер для нового QR-кода
-            qrContainer.innerHTML = "";
-            if (text) {
-                // Генерируем QR-код и выводим его в контейнер
-                QRCode.toCanvas(text, { width: 200, height: 200 }, function (error, canvas) {
-                    if (error) {
-                        console.error(error);
-                        return;
-                    }
-                    qrContainer.appendChild(canvas);
-                });
-            }
-        }
-    </script>
+    <div class="container">
+        <h1>Приветствие от Чайной Мафии</h1>
+        <p>Добро пожаловать в мир настоящего чая и непринужденной атмосферы. Наслаждайтесь уникальными сортами,
+            открывайте новые вкусы и становитесь частью нашей дружной компании!</p>
+    </div>
 </body>
 
 </html>
